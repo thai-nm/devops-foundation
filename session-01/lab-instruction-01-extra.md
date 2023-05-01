@@ -1,10 +1,13 @@
 # Lab 01: Extra - Set up Kubernetes cluster with kubeadm
 
+*This guide will provide step-by-step instructions to help you create a Kubernetes cluster using `kubeadm`.*
 ## Pre-requisite
 
-- Linux VM with:
-  -  At least 4GB of memory and 2 vCPU
-  -  Internet access
+- Linhx VM with:
+  - At least 4GB of memory and 2 vCPU
+  - Internet access
+  - OS: `Ubuntu 20.04 or 22.04` 
+  - User with `root` privileage 
 
 ## Instruction
 To bootstrap a Kubernetes cluster with `kubeadm`, the following steps should be performed:
