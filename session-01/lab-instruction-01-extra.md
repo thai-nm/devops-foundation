@@ -15,13 +15,22 @@ To bootstrap a Kubernetes cluster with `kubeadm`, the following steps should be 
 - Prepare common settings for Kubernetes nodes
 - Prepare `containerd` container runtime:
   - `containerd`: container runtime in charge of creating containers based on requirements received from `kubelet`.
-- Boostrap a Kubernetes cluster with `kubeadm`
+- Boostrap a Kubernetes cluster with `kubeadm`. The following components will be created:
+  - `api-server`: acts as a front-end for external user to interact with our cluster or other components in the cluster communicate with each others.
+  - `etcd`: key-value database stores our cluster's state.
+  - `kube-proxy`: responsible for managing network routing between different pods within a Kubernetes cluster.
+  - `kube-scheduler`: choose node for created Pod based on filters or constraints.
+  - `kube-controller-manager`: watch cluster's state and move the cluster from current state to desired state.
+  - `coredns`: manage DNS in the cluster. 
+    
+    **NOTE**: Cluster CoreDNS will not be created until cluster container network interface or CNI is configured correctly. We will set up `flannel` CNI right behind this step.
 - Install `flannel` container network interface or CNI
+  - Container network interface (CNI) is responsible for configuring the network interfaces and routing tables of the individual containers within a pod
 - Create a simple pod
 
 
 Below are detailed instructions:
-- Install `kubeadm`, `kubectl`, `kubelet`:
+- [Reference](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl) - Install `kubeadm`, `kubectl`, `kubelet`:
   ```bash
   # Update `apt` package manager and install dependencies:
   sudo apt-get update
@@ -41,8 +50,7 @@ Below are detailed instructions:
 
   NOTE: `/etc/apt/keyrings` directory might not exist, create one if you need to and make it world-readable but writable only by admins.
 
-- Prepare common settings for Kubernetes nodes:
-
+- [Reference](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#install-and-configure-prerequisites) - Prepare common settings for Kubernetes nodes:
   ```bash
   # These settings should be OK without any issues
   cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
@@ -69,7 +77,7 @@ Below are detailed instructions:
   sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables net.ipv4.ip_forward
   ```
 
-- Prepare `containerd` container runtime:
+- [Reference](https://github.com/containerd/containerd/blob/main/docs/getting-started.md#installing-containerd) - Prepare `containerd` container runtime:
   ```bash
   # Download `container` binary file
   wget https://github.com/containerd/containerd/releases/download/v1.7.0/containerd-1.7.0-linux-amd64.tar.gz
@@ -101,7 +109,7 @@ Below are detailed instructions:
   sudo systemctl restart containerd
   ```
 
-- Boostrap Kubernetes cluster:
+- [Reference](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#initializing-your-control-plane-node) - Boostrap Kubernetes cluster:
   ```bash
   # Boostrap our cluster, pod CIDR range of 10.244.0.0/16 is required by `flannel` CNI add-on below
   sudo kubeadm init --pod-network-cidr 10.244.0.0/16
@@ -112,12 +120,18 @@ Below are detailed instructions:
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
   ```
 
-- Install `flannel` CNI add-on:
+- [Reference](https://github.com/flannel-io/flannel#deploying-flannel-with-kubectl) - Install `flannel` CNI add-on:
   ```bash
   kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
   ```
 
-- Clean up:
+- Create a simple pod:
+  ```bash
+  kubectl create my-nginx --image nginx:alpine
+  kubectl get pod -A
+  ```
+
+In case of malfunctional Kubernetes cluster, this might help to clean up:
   ```bash
   kubectl drain <node name> --delete-emptydir-data --force --ignore-daemonsets
   sudo kudeadm reset
