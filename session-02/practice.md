@@ -3,3 +3,5 @@
 3. What is the network interface configured for cluster connectivity on the controlplane node?
 4. What is the MAC address of the interface on the controlplane node?
 5. What are the IP addresses assigned to worker nodes?
+6. Create 2 nginx pods and create a ClusterIP service to load balance between the created nginx pods.
+7. Make sure the set up above is working
