@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     run: demo2-01
-  name: demo2-01
+  name: demo2-network
 spec:
   containers:
     - image: redis:alpine
