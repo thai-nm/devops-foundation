@@ -48,4 +48,7 @@
     - **DEMO**: Tạo một service với config đứng trước hai pod nginx bên trên và xem xem service có load balance không.
 
     slide 13:
-    - **DEMO**: Call tới service bằng service name thay vì IP của service
+    - **DEMO**: Call tới service bằng service name thay vì IP của service\
+
+    slide 14: 
+    - **DEMO**: Từ 1 pod nginx, thực hiện call tới pod nginx còn lại bằng FQDN. Sau đó thử scale down coredns xuống 0 replica và call lại.
