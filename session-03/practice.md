@@ -6,5 +6,3 @@
 6. Develop a manifest file to create 1 pod with `busybox` image and shell commands to run `curl <IP of the created service in #3>:8080` after every 3 second
 7. Wait for 10 seconds and get the logs of the `busybox` pod above.
 8. Create 1 NodePort service to expose 2 created pods on node port `30080` and test the connection
-
-
