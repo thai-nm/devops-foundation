@@ -4,15 +4,15 @@ metadata:
   creationTimestamp: null
   labels:
     run: nginx
-  name: nginx
+  name: resource-model
 spec:
   containers:
-  - image: nginx
-    name: nginx
-    resources: 
-      requests:
-        cpu: 200m
-        memory: 100Mi
+    - image: nginx
+      name: resource-model
+      resources:
+        requests:
+          cpu: 200m
+          memory: 100Mi
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
