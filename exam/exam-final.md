@@ -1,3 +1,9 @@
+# Kubernetes module: Final exam
+
+## Pre-requisite
+- A `kind` Kubernetes cluster
+
+## Exam
 1. Create a Deployment
     - name: `nginx-deployment`
     - replicas: `3`
@@ -45,6 +51,7 @@
     - name: `postgres-secret`
     - secret.env:
       ```
+      POSTGRES_DB=my_postgres
       POSTGRES_USER=root
       POSTGRES_PASSWORD=toor_password
       ```
@@ -58,6 +65,21 @@
 
 11. Verify that the `nginx-nodeport` is accessible by using `curl` and save the result to `/tmp/nginx-result.log`
 
-12.  Verify that the `postgres` pods are running and the database is accessible by connecting to the database from a client application and performing some queries.
+12. Verify that the `postgres` pods are running and the database is accessible by running command `psql -U root my_postgres -c "\l"`
+
+13. Create a PVC and a Pod uses that PVC by dynamically provisioning:
+    - PVC:
+      - storageClassName: `standard`
+      - accessModes: `ReadWriteOnce`
+      - request storage: `1Gi`
+    - Pod:
+      - image: `nginx`
+      - mountPath: `/var/www/html`
+
+14. Add a label `env: dev` to a worker node and assign a Pod with image `nginx` to that node.
+
+15. Apply manifest `manifest/15.yaml`. Explain the status of the created object and troubleshoot to make it works.
+    
+16. Apply manifest `manifest/16.yaml`. Troubleshoot if the created object is not working properly.
 
 Note: You may need to adjust the specifics of this exercise to fit your Kubernetes environment and setup.

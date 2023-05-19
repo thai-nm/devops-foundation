@@ -1,278 +1,164 @@
-1. Which component is responsible for scheduling pods to nodes in a Kubernetes cluster?
-A) kubelet
-B) kube-proxy
-C) kube-scheduler
-D) kube-apiserver
-Answer: C
-
-2. Which component is responsible for storing and managing the state of the Kubernetes cluster?
-A) etcd
-B) kube-apiserver
-C) kube-controller-manager
-D) kube-scheduler
-Answer: A
-
-3. Which component is responsible for ensuring that the desired state of the cluster matches the current state?
-A) kube-apiserver
-B) kube-controller-manager
-C) kube-scheduler
-D) kube-proxy
-Answer: B
-
-4. Which component is responsible for managing the networking configuration of pods in a Kubernetes cluster?
-A) kube-apiserver
-B) kubelet
-C) kube-proxy
-D) CNI plugin
-Answer: D
-
-5. Which component is responsible for routing traffic to services in a Kubernetes cluster?
-A) kube-proxy
-B) kubelet
-C) kube-controller-manager
-D) CNI plugin
-Answer: A
-
-6. Which component is responsible for managing the lifecycle of a containerized application in a Kubernetes cluster?
-A) kube-apiserver
-B) kube-controller-manager
-C) kube-scheduler
-D) kubelet
-Answer: D
-
-7. Which component is responsible for authenticating and authorizing API requests in a Kubernetes cluster?
-A) kube-apiserver
-B) kube-controller-manager
-C) kube-scheduler
-D) kubelet
-Answer: A
-
-8. What is the default networking mode for Kubernetes?
-A) Host Networking
-B) Container Networking Interface (CNI)
-C) Cluster Networking
-D) Service Networking
-Answer: B
-
-9. What is the purpose of a Kubernetes Service?
-A) To expose a set of Pods as a network service
-B) To provide storage for a set of Pods
-C) To schedule Pods onto nodes in the cluster
-D) To manage the lifecycle of Pods
-Answer: A
-
-10. What is the purpose of a Kubernetes CNI plugin?
-A) To manage the lifecycle of Kubernetes components
-B) To provide secure authentication and authorization for Kubernetes applications
-C) To manage the networking configuration of Pods
-D) To provide storage for Kubernetes applications
-Answer: C
-
-11. What is the purpose of the kube-proxy component in Kubernetes networking?
-A) To provide load balancing for Kubernetes Services
-B) To manage the lifecycle of Kubernetes components
-C) To manage the configuration of Kubernetes networking plugins
-D) To monitor the health of the Kubernetes API server
-Answer: A
-
-12. What is the purpose of a Kubernetes Service?
-A) To manage and deploy containerized applications
-B) To manage and deploy nodes in a cluster
-C) To provide a stable IP address and DNS name for a set of pods
-D) To schedule pods on a specific node
-Answer: C
-
-13. What is the default type of Kubernetes Service?
-A) ClusterIP
-B) NodePort
-C) LoadBalancer
-D) ExternalName
-Answer: A
-
-14. What command is used to create a new deployment in Kubernetes?
-A) kubectl create deployment
-B) kubectl create deploy
-C) kubectl new deployment
-D) kubectl deploy create
-Answer: A
-
-15. What option can be used with kubectl get to show additional details about a resource?
-A) -v
-B) -d
-C) -o
-D) -a
-Answer: C
-
-16. What command is used to update an existing deployment in Kubernetes?
-A) kubectl update deployment
-B) kubectl edit deploy
-C) kubectl modify deployment
-D) kubectl change deploy
-Answer: B
-
-17. What option can be used with kubectl apply to dry-run a configuration change?
-A) --simulate
-B) --dry-run
-C) --preview
-D) --test
-Answer: B
-
-18. What command is used to delete a resource in Kubernetes?
-A) kubectl delete resource
-B) kubectl remove
-C) kubectl rm
-D) kubectl delete
-Answer: D
-
-19. What option can be used with kubectl logs to tail the logs of a container?
-A) -t
-B) -f
-C) -l
-D) -c
-Answer: B
-
-20. Which Kubernetes object is used to manage long-running, stateless applications?
-A) Pod
-B) Deployment
-C) Job
-D) DaemonSet
-Answer: B) Deployment
-
-21. What is the purpose of an init container in a pod?
-A) It runs before the main container and initializes the environment
-B) It runs alongside the main container and shares the same network namespace
-C) It runs after the main container and performs cleanup tasks
-D) It runs independently of the main container and performs auxiliary tasks
-Answer: A) It runs before the main container and initializes the environment
-
-22. Which Kubernetes object is used to manage batch jobs or one-time processes?
-A) Pod
-B) Deployment
-C) Job
-D) DaemonSet
-Answer: C) Job
-
-23. Which Kubernetes object is used to ensure that a specific pod is running on all (or some) nodes in a cluster?
-A) Pod
-B) Deployment
-C) Job
-D) DaemonSet
-Answer: D) DaemonSet
-
-24. Which Kubernetes object is used to manage stateful applications that require unique network identifiers and stable storage?
-A) Pod
-B) Deployment
-C) Job
-D) StatefulSet
-Answer: D) StatefulSet
-
-25. What is the purpose of a DaemonSet in Kubernetes?
-A) To ensure a specified number of replicas of a pod are running
-B) To create a one-time job or task
-C) To ensure that a copy of a pod is running on each node
-D) To create a scalable set of pods that can be horizontally auto-scaled
-Answer: C
-
-26. What is the primary use case for a Kubernetes Job?
-A) Running long-lived services or applications
-B) Running one-off tasks or batch jobs
-C) Scaling up and down replicas of a pod
-D) Managing network traffic for a set of pods
-Answer: B
-
-27. How does a Kubernetes Deployment ensure that a desired state is achieved and maintained?
-A) By running a set of containers on a single node
-B) By automatically scaling up and down replicas of a pod
-C) By rolling out changes to a pod in a controlled manner
-D) By providing access to external services and resources
-Answer: C
-
-28. What is the main difference between a StatefulSet and a Deployment in Kubernetes?
-A) StatefulSets are designed for stateless applications, while Deployments are designed for stateful applications
-B) StatefulSets ensure that each pod has a stable, unique identity, while Deployments do not
-C) StatefulSets allow for horizontal scaling, while Deployments do not
-D) StatefulSets provide access to external resources, while Deployments do not
-Answer: B
-
-29. What is the purpose of a Kubernetes volume?
-A) To provide persistent storage for a container
-B) To store configuration data for a container
-C) To store secrets for a container
-D) To store log files for a container
-Answer: A) To provide persistent storage for a container
-
-30. Which Kubernetes resource is used to request storage for a pod?
-A) Pod
-B) Deployment
-C) Persistent Volume
-D) Persistent Volume Claim
-Answer: D) Persistent Volume Claim
-
-31. What is a Persistent Volume in Kubernetes?
-A) A request for storage made by a pod
-B) A block of storage that can be requested by a pod
-C) A type of Kubernetes object used to store configuration data
-D) A Kubernetes object that represents a secret
-Answer: B) A block of storage that can be requested by a pod
-
-32. What is the purpose of a ConfigMap in Kubernetes?
-A) To store configuration data for a container
-B) To store secrets for a container
-C) To provide persistent storage for a container
-D) To store log files for a container
-Answer: A) To store configuration data for a container
-
-33. Which Kubernetes resource is used to represent a sensitive piece of information, such as a password or API key?
-A) ConfigMap
-B) Secret
-C) Persistent Volume
-D) Persistent Volume Claim
-Answer: B) Secret
-
-34. What is the correct command to apply changes made to a Kubernetes manifest file?
-A) kubectl update -f file.yaml
-B) kubectl apply -f file.yaml
-C) kubectl edit -f file.yaml
-D) kubectl replace -f file.yaml
-Answer: B) kubectl apply -f file.yaml
-
-35. Which command can be used to view the logs of a pod?
-A) kubectl logs
-B) kubectl view
-C) kubectl describe
-D) kubectl get
-Answer: A) kubectl logs
-
-36. Which kubectl command can be used to view detailed information about a specific object?
-A) kubectl get
-B) kubectl view
-C) kubectl describe
-D) kubectl logs
-Answer: C) kubectl describe
-
-37. You have a Job that runs a batch process that takes several hours to complete. The process has failed, but you need to ensure that it is completed successfully. What is the best way to restart the Job and ensure that it completes successfully?
-A) Use the kubectl delete job command to delete the job and then recreate it.
-B) Use the kubectl apply command to apply a new manifest with the same Job.
-C) Use the kubectl edit job command to change the restart policy to "OnFailure" and then delete and recreate the failed pod.
-D) Use the kubectl rollout restart command to restart the Job.
-
-38. You have a Kubernetes pod that needs to access a database running outside the Kubernetes cluster. Which Kubernetes object can you use to securely pass the database credentials to the pod?
-A) Pod
-B) Secret
-C) ConfigMap
-D) ServiceAccount
-Answer: B
-
-39. You created a PersistentVolumeClaim and used it to mount a PersistentVolume in a Pod. However, you noticed that the Pod is stuck in the Pending state and the PersistentVolumeClaim is in the Pending state as well. What Kubernetes feature can you use to troubleshoot the issue?
-A. kubectl get events
-B. kubectl logs
-C. kubectl describe pod
-D. kubectl edit pvc
-Answer: A
-
-40. You have a pod running in your cluster, but it is not responding to requests. You suspect that it may have crashed. Which kubectl command can you use to check the status of the pod?
-A. kubectl get pods
-B. kubectl describe pod
-C. kubectl logs
-D. kubectl exec
-Answer: B. kubectl describe pod
+MS4gV2hpY2ggY29tcG9uZW50IGlzIHJlc3BvbnNpYmxlIGZvciBzY2hlZHVsaW5nIHBvZHMgdG8g
+bm9kZXMgaW4gYSBLdWJlcm5ldGVzIGNsdXN0ZXI/CkEpIGt1YmVsZXQKQikga3ViZS1wcm94eQpD
+KSBrdWJlLXNjaGVkdWxlcgpEKSBrdWJlLWFwaXNlcnZlcgpBbnN3ZXI6IEMKCjIuIFdoaWNoIGNv
+bXBvbmVudCBpcyByZXNwb25zaWJsZSBmb3Igc3RvcmluZyBhbmQgbWFuYWdpbmcgdGhlIHN0YXRl
+IG9mIHRoZSBLdWJlcm5ldGVzIGNsdXN0ZXI/CkEpIGV0Y2QKQikga3ViZS1hcGlzZXJ2ZXIKQykg
+a3ViZS1jb250cm9sbGVyLW1hbmFnZXIKRCkga3ViZS1zY2hlZHVsZXIKQW5zd2VyOiBBCgozLiBX
+aGljaCBjb21wb25lbnQgaXMgcmVzcG9uc2libGUgZm9yIGVuc3VyaW5nIHRoYXQgdGhlIGRlc2ly
+ZWQgc3RhdGUgb2YgdGhlIGNsdXN0ZXIgbWF0Y2hlcyB0aGUgY3VycmVudCBzdGF0ZT8KQSkga3Vi
+ZS1hcGlzZXJ2ZXIKQikga3ViZS1jb250cm9sbGVyLW1hbmFnZXIKQykga3ViZS1zY2hlZHVsZXIK
+RCkga3ViZS1wcm94eQpBbnN3ZXI6IEIKCjQuIFdoaWNoIGNvbXBvbmVudCBpcyByZXNwb25zaWJs
+ZSBmb3IgbWFuYWdpbmcgdGhlIG5ldHdvcmtpbmcgY29uZmlndXJhdGlvbiBvZiBwb2RzIGluIGEg
+S3ViZXJuZXRlcyBjbHVzdGVyPwpBKSBrdWJlLWFwaXNlcnZlcgpCKSBrdWJlbGV0CkMpIGt1YmUt
+cHJveHkKRCkgQ05JIHBsdWdpbgpBbnN3ZXI6IEQKCjUuIFdoaWNoIGNvbXBvbmVudCBpcyByZXNw
+b25zaWJsZSBmb3Igcm91dGluZyB0cmFmZmljIHRvIHNlcnZpY2VzIGluIGEgS3ViZXJuZXRlcyBj
+bHVzdGVyPwpBKSBrdWJlLXByb3h5CkIpIGt1YmVsZXQKQykga3ViZS1jb250cm9sbGVyLW1hbmFn
+ZXIKRCkgQ05JIHBsdWdpbgpBbnN3ZXI6IEEKCjYuIFdoaWNoIGNvbXBvbmVudCBpcyByZXNwb25z
+aWJsZSBmb3IgbWFuYWdpbmcgdGhlIGxpZmVjeWNsZSBvZiBhIGNvbnRhaW5lcml6ZWQgYXBwbGlj
+YXRpb24gaW4gYSBLdWJlcm5ldGVzIGNsdXN0ZXI/CkEpIGt1YmUtYXBpc2VydmVyCkIpIGt1YmUt
+Y29udHJvbGxlci1tYW5hZ2VyCkMpIGt1YmUtc2NoZWR1bGVyCkQpIGt1YmVsZXQKQW5zd2VyOiBE
+Cgo3LiBXaGljaCBjb21wb25lbnQgaXMgcmVzcG9uc2libGUgZm9yIGF1dGhlbnRpY2F0aW5nIGFu
+ZCBhdXRob3JpemluZyBBUEkgcmVxdWVzdHMgaW4gYSBLdWJlcm5ldGVzIGNsdXN0ZXI/CkEpIGt1
+YmUtYXBpc2VydmVyCkIpIGt1YmUtY29udHJvbGxlci1tYW5hZ2VyCkMpIGt1YmUtc2NoZWR1bGVy
+CkQpIGt1YmVsZXQKQW5zd2VyOiBBCgo4LiBXaGF0IGlzIHRoZSBkZWZhdWx0IG5ldHdvcmtpbmcg
+bW9kZSBmb3IgS3ViZXJuZXRlcz8KQSkgSG9zdCBOZXR3b3JraW5nCkIpIENvbnRhaW5lciBOZXR3
+b3JraW5nIEludGVyZmFjZSAoQ05JKQpDKSBDbHVzdGVyIE5ldHdvcmtpbmcKRCkgU2VydmljZSBO
+ZXR3b3JraW5nCkFuc3dlcjogQgoKOS4gV2hhdCBpcyB0aGUgcHVycG9zZSBvZiBhIEt1YmVybmV0
+ZXMgU2VydmljZT8KQSkgVG8gZXhwb3NlIGEgc2V0IG9mIFBvZHMgYXMgYSBuZXR3b3JrIHNlcnZp
+Y2UKQikgVG8gcHJvdmlkZSBzdG9yYWdlIGZvciBhIHNldCBvZiBQb2RzCkMpIFRvIHNjaGVkdWxl
+IFBvZHMgb250byBub2RlcyBpbiB0aGUgY2x1c3RlcgpEKSBUbyBtYW5hZ2UgdGhlIGxpZmVjeWNs
+ZSBvZiBQb2RzCkFuc3dlcjogQQoKMTAuIFdoYXQgaXMgdGhlIHB1cnBvc2Ugb2YgYSBLdWJlcm5l
+dGVzIENOSSBwbHVnaW4/CkEpIFRvIG1hbmFnZSB0aGUgbGlmZWN5Y2xlIG9mIEt1YmVybmV0ZXMg
+Y29tcG9uZW50cwpCKSBUbyBwcm92aWRlIHNlY3VyZSBhdXRoZW50aWNhdGlvbiBhbmQgYXV0aG9y
+aXphdGlvbiBmb3IgS3ViZXJuZXRlcyBhcHBsaWNhdGlvbnMKQykgVG8gbWFuYWdlIHRoZSBuZXR3
+b3JraW5nIGNvbmZpZ3VyYXRpb24gb2YgUG9kcwpEKSBUbyBwcm92aWRlIHN0b3JhZ2UgZm9yIEt1
+YmVybmV0ZXMgYXBwbGljYXRpb25zCkFuc3dlcjogQwoKMTEuIFdoYXQgaXMgdGhlIHB1cnBvc2Ug
+b2YgdGhlIGt1YmUtcHJveHkgY29tcG9uZW50IGluIEt1YmVybmV0ZXMgbmV0d29ya2luZz8KQSkg
+VG8gcHJvdmlkZSBsb2FkIGJhbGFuY2luZyBmb3IgS3ViZXJuZXRlcyBTZXJ2aWNlcwpCKSBUbyBt
+YW5hZ2UgdGhlIGxpZmVjeWNsZSBvZiBLdWJlcm5ldGVzIGNvbXBvbmVudHMKQykgVG8gbWFuYWdl
+IHRoZSBjb25maWd1cmF0aW9uIG9mIEt1YmVybmV0ZXMgbmV0d29ya2luZyBwbHVnaW5zCkQpIFRv
+IG1vbml0b3IgdGhlIGhlYWx0aCBvZiB0aGUgS3ViZXJuZXRlcyBBUEkgc2VydmVyCkFuc3dlcjog
+QQoKMTIuIFdoYXQgaXMgdGhlIHB1cnBvc2Ugb2YgYSBLdWJlcm5ldGVzIFNlcnZpY2U/CkEpIFRv
+IG1hbmFnZSBhbmQgZGVwbG95IGNvbnRhaW5lcml6ZWQgYXBwbGljYXRpb25zCkIpIFRvIG1hbmFn
+ZSBhbmQgZGVwbG95IG5vZGVzIGluIGEgY2x1c3RlcgpDKSBUbyBwcm92aWRlIGEgc3RhYmxlIElQ
+IGFkZHJlc3MgYW5kIEROUyBuYW1lIGZvciBhIHNldCBvZiBwb2RzCkQpIFRvIHNjaGVkdWxlIHBv
+ZHMgb24gYSBzcGVjaWZpYyBub2RlCkFuc3dlcjogQwoKMTMuIFdoYXQgaXMgdGhlIGRlZmF1bHQg
+dHlwZSBvZiBLdWJlcm5ldGVzIFNlcnZpY2U/CkEpIENsdXN0ZXJJUApCKSBOb2RlUG9ydApDKSBM
+b2FkQmFsYW5jZXIKRCkgRXh0ZXJuYWxOYW1lCkFuc3dlcjogQQoKMTQuIFdoYXQgY29tbWFuZCBp
+cyB1c2VkIHRvIGNyZWF0ZSBhIG5ldyBkZXBsb3ltZW50IGluIEt1YmVybmV0ZXM/CkEpIGt1YmVj
+dGwgY3JlYXRlIGRlcGxveW1lbnQKQikga3ViZWN0bCBjcmVhdGUgZGVwbG95CkMpIGt1YmVjdGwg
+bmV3IGRlcGxveW1lbnQKRCkga3ViZWN0bCBkZXBsb3kgY3JlYXRlCkFuc3dlcjogQQoKMTUuIFdo
+YXQgb3B0aW9uIGNhbiBiZSB1c2VkIHdpdGgga3ViZWN0bCBnZXQgdG8gc2hvdyBhZGRpdGlvbmFs
+IGRldGFpbHMgYWJvdXQgYSByZXNvdXJjZT8KQSkgLXYKQikgLWQKQykgLW8KRCkgLWEKQW5zd2Vy
+OiBDCgoxNi4gV2hhdCBjb21tYW5kIGlzIHVzZWQgdG8gdXBkYXRlIGFuIGV4aXN0aW5nIGRlcGxv
+eW1lbnQgaW4gS3ViZXJuZXRlcz8KQSkga3ViZWN0bCB1cGRhdGUgZGVwbG95bWVudApCKSBrdWJl
+Y3RsIGVkaXQgZGVwbG95CkMpIGt1YmVjdGwgbW9kaWZ5IGRlcGxveW1lbnQKRCkga3ViZWN0bCBj
+aGFuZ2UgZGVwbG95CkFuc3dlcjogQgoKMTcuIFdoYXQgb3B0aW9uIGNhbiBiZSB1c2VkIHdpdGgg
+a3ViZWN0bCBhcHBseSB0byBkcnktcnVuIGEgY29uZmlndXJhdGlvbiBjaGFuZ2U/CkEpIC0tc2lt
+dWxhdGUKQikgLS1kcnktcnVuCkMpIC0tcHJldmlldwpEKSAtLXRlc3QKQW5zd2VyOiBCCgoxOC4g
+V2hhdCBjb21tYW5kIGlzIHVzZWQgdG8gZGVsZXRlIGEgcmVzb3VyY2UgaW4gS3ViZXJuZXRlcz8K
+QSkga3ViZWN0bCBkZWxldGUgcmVzb3VyY2UKQikga3ViZWN0bCByZW1vdmUKQykga3ViZWN0bCBy
+bQpEKSBrdWJlY3RsIGRlbGV0ZQpBbnN3ZXI6IEQKCjE5LiBXaGF0IG9wdGlvbiBjYW4gYmUgdXNl
+ZCB3aXRoIGt1YmVjdGwgbG9ncyB0byB0YWlsIHRoZSBsb2dzIG9mIGEgY29udGFpbmVyPwpBKSAt
+dApCKSAtZgpDKSAtbApEKSAtYwpBbnN3ZXI6IEIKCjIwLiBXaGljaCBLdWJlcm5ldGVzIG9iamVj
+dCBpcyB1c2VkIHRvIG1hbmFnZSBsb25nLXJ1bm5pbmcsIHN0YXRlbGVzcyBhcHBsaWNhdGlvbnM/
+CkEpIFBvZApCKSBEZXBsb3ltZW50CkMpIEpvYgpEKSBEYWVtb25TZXQKQW5zd2VyOiBCKSBEZXBs
+b3ltZW50CgoyMS4gV2hhdCBpcyB0aGUgcHVycG9zZSBvZiBhbiBpbml0IGNvbnRhaW5lciBpbiBh
+IHBvZD8KQSkgSXQgcnVucyBiZWZvcmUgdGhlIG1haW4gY29udGFpbmVyIGFuZCBpbml0aWFsaXpl
+cyB0aGUgZW52aXJvbm1lbnQKQikgSXQgcnVucyBhbG9uZ3NpZGUgdGhlIG1haW4gY29udGFpbmVy
+IGFuZCBzaGFyZXMgdGhlIHNhbWUgbmV0d29yayBuYW1lc3BhY2UKQykgSXQgcnVucyBhZnRlciB0
+aGUgbWFpbiBjb250YWluZXIgYW5kIHBlcmZvcm1zIGNsZWFudXAgdGFza3MKRCkgSXQgcnVucyBp
+bmRlcGVuZGVudGx5IG9mIHRoZSBtYWluIGNvbnRhaW5lciBhbmQgcGVyZm9ybXMgYXV4aWxpYXJ5
+IHRhc2tzCkFuc3dlcjogQSkgSXQgcnVucyBiZWZvcmUgdGhlIG1haW4gY29udGFpbmVyIGFuZCBp
+bml0aWFsaXplcyB0aGUgZW52aXJvbm1lbnQKCjIyLiBXaGljaCBLdWJlcm5ldGVzIG9iamVjdCBp
+cyB1c2VkIHRvIG1hbmFnZSBiYXRjaCBqb2JzIG9yIG9uZS10aW1lIHByb2Nlc3Nlcz8KQSkgUG9k
+CkIpIERlcGxveW1lbnQKQykgSm9iCkQpIERhZW1vblNldApBbnN3ZXI6IEMpIEpvYgoKMjMuIFdo
+aWNoIEt1YmVybmV0ZXMgb2JqZWN0IGlzIHVzZWQgdG8gZW5zdXJlIHRoYXQgYSBzcGVjaWZpYyBw
+b2QgaXMgcnVubmluZyBvbiBhbGwgKG9yIHNvbWUpIG5vZGVzIGluIGEgY2x1c3Rlcj8KQSkgUG9k
+CkIpIERlcGxveW1lbnQKQykgSm9iCkQpIERhZW1vblNldApBbnN3ZXI6IEQpIERhZW1vblNldAoK
+MjQuIFdoaWNoIEt1YmVybmV0ZXMgb2JqZWN0IGlzIHVzZWQgdG8gbWFuYWdlIHN0YXRlZnVsIGFw
+cGxpY2F0aW9ucyB0aGF0IHJlcXVpcmUgdW5pcXVlIG5ldHdvcmsgaWRlbnRpZmllcnMgYW5kIHN0
+YWJsZSBzdG9yYWdlPwpBKSBQb2QKQikgRGVwbG95bWVudApDKSBKb2IKRCkgU3RhdGVmdWxTZXQK
+QW5zd2VyOiBEKSBTdGF0ZWZ1bFNldAoKMjUuIFdoYXQgaXMgdGhlIHB1cnBvc2Ugb2YgYSBEYWVt
+b25TZXQgaW4gS3ViZXJuZXRlcz8KQSkgVG8gZW5zdXJlIGEgc3BlY2lmaWVkIG51bWJlciBvZiBy
+ZXBsaWNhcyBvZiBhIHBvZCBhcmUgcnVubmluZwpCKSBUbyBjcmVhdGUgYSBvbmUtdGltZSBqb2Ig
+b3IgdGFzawpDKSBUbyBlbnN1cmUgdGhhdCBhIGNvcHkgb2YgYSBwb2QgaXMgcnVubmluZyBvbiBl
+YWNoIG5vZGUKRCkgVG8gY3JlYXRlIGEgc2NhbGFibGUgc2V0IG9mIHBvZHMgdGhhdCBjYW4gYmUg
+aG9yaXpvbnRhbGx5IGF1dG8tc2NhbGVkCkFuc3dlcjogQwoKMjYuIFdoYXQgaXMgdGhlIHByaW1h
+cnkgdXNlIGNhc2UgZm9yIGEgS3ViZXJuZXRlcyBKb2I/CkEpIFJ1bm5pbmcgbG9uZy1saXZlZCBz
+ZXJ2aWNlcyBvciBhcHBsaWNhdGlvbnMKQikgUnVubmluZyBvbmUtb2ZmIHRhc2tzIG9yIGJhdGNo
+IGpvYnMKQykgU2NhbGluZyB1cCBhbmQgZG93biByZXBsaWNhcyBvZiBhIHBvZApEKSBNYW5hZ2lu
+ZyBuZXR3b3JrIHRyYWZmaWMgZm9yIGEgc2V0IG9mIHBvZHMKQW5zd2VyOiBCCgoyNy4gSG93IGRv
+ZXMgYSBLdWJlcm5ldGVzIERlcGxveW1lbnQgZW5zdXJlIHRoYXQgYSBkZXNpcmVkIHN0YXRlIGlz
+IGFjaGlldmVkIGFuZCBtYWludGFpbmVkPwpBKSBCeSBydW5uaW5nIGEgc2V0IG9mIGNvbnRhaW5l
+cnMgb24gYSBzaW5nbGUgbm9kZQpCKSBCeSBhdXRvbWF0aWNhbGx5IHNjYWxpbmcgdXAgYW5kIGRv
+d24gcmVwbGljYXMgb2YgYSBwb2QKQykgQnkgcm9sbGluZyBvdXQgY2hhbmdlcyB0byBhIHBvZCBp
+biBhIGNvbnRyb2xsZWQgbWFubmVyCkQpIEJ5IHByb3ZpZGluZyBhY2Nlc3MgdG8gZXh0ZXJuYWwg
+c2VydmljZXMgYW5kIHJlc291cmNlcwpBbnN3ZXI6IEMKCjI4LiBXaGF0IGlzIHRoZSBtYWluIGRp
+ZmZlcmVuY2UgYmV0d2VlbiBhIFN0YXRlZnVsU2V0IGFuZCBhIERlcGxveW1lbnQgaW4gS3ViZXJu
+ZXRlcz8KQSkgU3RhdGVmdWxTZXRzIGFyZSBkZXNpZ25lZCBmb3Igc3RhdGVsZXNzIGFwcGxpY2F0
+aW9ucywgd2hpbGUgRGVwbG95bWVudHMgYXJlIGRlc2lnbmVkIGZvciBzdGF0ZWZ1bCBhcHBsaWNh
+dGlvbnMKQikgU3RhdGVmdWxTZXRzIGVuc3VyZSB0aGF0IGVhY2ggcG9kIGhhcyBhIHN0YWJsZSwg
+dW5pcXVlIGlkZW50aXR5LCB3aGlsZSBEZXBsb3ltZW50cyBkbyBub3QKQykgU3RhdGVmdWxTZXRz
+IGFsbG93IGZvciBob3Jpem9udGFsIHNjYWxpbmcsIHdoaWxlIERlcGxveW1lbnRzIGRvIG5vdApE
+KSBTdGF0ZWZ1bFNldHMgcHJvdmlkZSBhY2Nlc3MgdG8gZXh0ZXJuYWwgcmVzb3VyY2VzLCB3aGls
+ZSBEZXBsb3ltZW50cyBkbyBub3QKQW5zd2VyOiBCCgoyOS4gV2hhdCBpcyB0aGUgcHVycG9zZSBv
+ZiBhIEt1YmVybmV0ZXMgdm9sdW1lPwpBKSBUbyBwcm92aWRlIHBlcnNpc3RlbnQgc3RvcmFnZSBm
+b3IgYSBjb250YWluZXIKQikgVG8gc3RvcmUgY29uZmlndXJhdGlvbiBkYXRhIGZvciBhIGNvbnRh
+aW5lcgpDKSBUbyBzdG9yZSBzZWNyZXRzIGZvciBhIGNvbnRhaW5lcgpEKSBUbyBzdG9yZSBsb2cg
+ZmlsZXMgZm9yIGEgY29udGFpbmVyCkFuc3dlcjogQSkgVG8gcHJvdmlkZSBwZXJzaXN0ZW50IHN0
+b3JhZ2UgZm9yIGEgY29udGFpbmVyCgozMC4gV2hpY2ggS3ViZXJuZXRlcyByZXNvdXJjZSBpcyB1
+c2VkIHRvIHJlcXVlc3Qgc3RvcmFnZSBmb3IgYSBwb2Q/CkEpIFBvZApCKSBEZXBsb3ltZW50CkMp
+IFBlcnNpc3RlbnQgVm9sdW1lCkQpIFBlcnNpc3RlbnQgVm9sdW1lIENsYWltCkFuc3dlcjogRCkg
+UGVyc2lzdGVudCBWb2x1bWUgQ2xhaW0KCjMxLiBXaGF0IGlzIGEgUGVyc2lzdGVudCBWb2x1bWUg
+aW4gS3ViZXJuZXRlcz8KQSkgQSByZXF1ZXN0IGZvciBzdG9yYWdlIG1hZGUgYnkgYSBwb2QKQikg
+QSBibG9jayBvZiBzdG9yYWdlIHRoYXQgY2FuIGJlIHJlcXVlc3RlZCBieSBhIHBvZApDKSBBIHR5
+cGUgb2YgS3ViZXJuZXRlcyBvYmplY3QgdXNlZCB0byBzdG9yZSBjb25maWd1cmF0aW9uIGRhdGEK
+RCkgQSBLdWJlcm5ldGVzIG9iamVjdCB0aGF0IHJlcHJlc2VudHMgYSBzZWNyZXQKQW5zd2VyOiBC
+KSBBIGJsb2NrIG9mIHN0b3JhZ2UgdGhhdCBjYW4gYmUgcmVxdWVzdGVkIGJ5IGEgcG9kCgozMi4g
+V2hhdCBpcyB0aGUgcHVycG9zZSBvZiBhIENvbmZpZ01hcCBpbiBLdWJlcm5ldGVzPwpBKSBUbyBz
+dG9yZSBjb25maWd1cmF0aW9uIGRhdGEgZm9yIGEgY29udGFpbmVyCkIpIFRvIHN0b3JlIHNlY3Jl
+dHMgZm9yIGEgY29udGFpbmVyCkMpIFRvIHByb3ZpZGUgcGVyc2lzdGVudCBzdG9yYWdlIGZvciBh
+IGNvbnRhaW5lcgpEKSBUbyBzdG9yZSBsb2cgZmlsZXMgZm9yIGEgY29udGFpbmVyCkFuc3dlcjog
+QSkgVG8gc3RvcmUgY29uZmlndXJhdGlvbiBkYXRhIGZvciBhIGNvbnRhaW5lcgoKMzMuIFdoaWNo
+IEt1YmVybmV0ZXMgcmVzb3VyY2UgaXMgdXNlZCB0byByZXByZXNlbnQgYSBzZW5zaXRpdmUgcGll
+Y2Ugb2YgaW5mb3JtYXRpb24sIHN1Y2ggYXMgYSBwYXNzd29yZCBvciBBUEkga2V5PwpBKSBDb25m
+aWdNYXAKQikgU2VjcmV0CkMpIFBlcnNpc3RlbnQgVm9sdW1lCkQpIFBlcnNpc3RlbnQgVm9sdW1l
+IENsYWltCkFuc3dlcjogQikgU2VjcmV0CgozNC4gV2hhdCBpcyB0aGUgY29ycmVjdCBjb21tYW5k
+IHRvIGFwcGx5IGNoYW5nZXMgbWFkZSB0byBhIEt1YmVybmV0ZXMgbWFuaWZlc3QgZmlsZT8KQSkg
+a3ViZWN0bCB1cGRhdGUgLWYgZmlsZS55YW1sCkIpIGt1YmVjdGwgYXBwbHkgLWYgZmlsZS55YW1s
+CkMpIGt1YmVjdGwgZWRpdCAtZiBmaWxlLnlhbWwKRCkga3ViZWN0bCByZXBsYWNlIC1mIGZpbGUu
+eWFtbApBbnN3ZXI6IEIpIGt1YmVjdGwgYXBwbHkgLWYgZmlsZS55YW1sCgozNS4gV2hpY2ggY29t
+bWFuZCBjYW4gYmUgdXNlZCB0byB2aWV3IHRoZSBsb2dzIG9mIGEgcG9kPwpBKSBrdWJlY3RsIGxv
+Z3MKQikga3ViZWN0bCB2aWV3CkMpIGt1YmVjdGwgZGVzY3JpYmUKRCkga3ViZWN0bCBnZXQKQW5z
+d2VyOiBBKSBrdWJlY3RsIGxvZ3MKCjM2LiBXaGljaCBrdWJlY3RsIGNvbW1hbmQgY2FuIGJlIHVz
+ZWQgdG8gdmlldyBkZXRhaWxlZCBpbmZvcm1hdGlvbiBhYm91dCBhIHNwZWNpZmljIG9iamVjdD8K
+QSkga3ViZWN0bCBnZXQKQikga3ViZWN0bCB2aWV3CkMpIGt1YmVjdGwgZGVzY3JpYmUKRCkga3Vi
+ZWN0bCBsb2dzCkFuc3dlcjogQykga3ViZWN0bCBkZXNjcmliZQoKMzcuIFlvdSBoYXZlIGEgSm9i
+IHRoYXQgcnVucyBhIGJhdGNoIHByb2Nlc3MgdGhhdCB0YWtlcyBzZXZlcmFsIGhvdXJzIHRvIGNv
+bXBsZXRlLiBUaGUgcHJvY2VzcyBoYXMgZmFpbGVkLCBidXQgeW91IG5lZWQgdG8gZW5zdXJlIHRo
+YXQgaXQgaXMgY29tcGxldGVkIHN1Y2Nlc3NmdWxseS4gV2hhdCBpcyB0aGUgYmVzdCB3YXkgdG8g
+cmVzdGFydCB0aGUgSm9iIGFuZCBlbnN1cmUgdGhhdCBpdCBjb21wbGV0ZXMgc3VjY2Vzc2Z1bGx5
+PwpBKSBVc2UgdGhlIGt1YmVjdGwgZGVsZXRlIGpvYiBjb21tYW5kIHRvIGRlbGV0ZSB0aGUgam9i
+IGFuZCB0aGVuIHJlY3JlYXRlIGl0LgpCKSBVc2UgdGhlIGt1YmVjdGwgYXBwbHkgY29tbWFuZCB0
+byBhcHBseSBhIG5ldyBtYW5pZmVzdCB3aXRoIHRoZSBzYW1lIEpvYi4KQykgVXNlIHRoZSBrdWJl
+Y3RsIGVkaXQgam9iIGNvbW1hbmQgdG8gY2hhbmdlIHRoZSByZXN0YXJ0IHBvbGljeSB0byAiT25G
+YWlsdXJlIiBhbmQgdGhlbiBkZWxldGUgYW5kIHJlY3JlYXRlIHRoZSBmYWlsZWQgcG9kLgpEKSBV
+c2UgdGhlIGt1YmVjdGwgcm9sbG91dCByZXN0YXJ0IGNvbW1hbmQgdG8gcmVzdGFydCB0aGUgSm9i
+LgoKMzguIFlvdSBoYXZlIGEgS3ViZXJuZXRlcyBwb2QgdGhhdCBuZWVkcyB0byBhY2Nlc3MgYSBk
+YXRhYmFzZSBydW5uaW5nIG91dHNpZGUgdGhlIEt1YmVybmV0ZXMgY2x1c3Rlci4gV2hpY2ggS3Vi
+ZXJuZXRlcyBvYmplY3QgY2FuIHlvdSB1c2UgdG8gc2VjdXJlbHkgcGFzcyB0aGUgZGF0YWJhc2Ug
+Y3JlZGVudGlhbHMgdG8gdGhlIHBvZD8KQSkgUG9kCkIpIFNlY3JldApDKSBDb25maWdNYXAKRCkg
+U2VydmljZUFjY291bnQKQW5zd2VyOiBCCgozOS4gWW91IGNyZWF0ZWQgYSBQZXJzaXN0ZW50Vm9s
+dW1lQ2xhaW0gYW5kIHVzZWQgaXQgdG8gbW91bnQgYSBQZXJzaXN0ZW50Vm9sdW1lIGluIGEgUG9k
+LiBIb3dldmVyLCB5b3Ugbm90aWNlZCB0aGF0IHRoZSBQb2QgaXMgc3R1Y2sgaW4gdGhlIFBlbmRp
+bmcgc3RhdGUgYW5kIHRoZSBQZXJzaXN0ZW50Vm9sdW1lQ2xhaW0gaXMgaW4gdGhlIFBlbmRpbmcg
+c3RhdGUgYXMgd2VsbC4gV2hhdCBLdWJlcm5ldGVzIGZlYXR1cmUgY2FuIHlvdSB1c2UgdG8gdHJv
+dWJsZXNob290IHRoZSBpc3N1ZT8KQS4ga3ViZWN0bCBnZXQgZXZlbnRzCkIuIGt1YmVjdGwgbG9n
+cwpDLiBrdWJlY3RsIGRlc2NyaWJlIHBvZApELiBrdWJlY3RsIGVkaXQgcHZjCkFuc3dlcjogQQoK
+NDAuIFlvdSBoYXZlIGEgcG9kIHJ1bm5pbmcgaW4geW91ciBjbHVzdGVyLCBidXQgaXQgaXMgbm90
+IHJlc3BvbmRpbmcgdG8gcmVxdWVzdHMuIFlvdSBzdXNwZWN0IHRoYXQgaXQgbWF5IGhhdmUgY3Jh
+c2hlZC4gV2hpY2gga3ViZWN0bCBjb21tYW5kIGNhbiB5b3UgdXNlIHRvIGNoZWNrIHRoZSBzdGF0
+dXMgb2YgdGhlIHBvZD8KQS4ga3ViZWN0bCBnZXQgcG9kcwpCLiBrdWJlY3RsIGRlc2NyaWJlIHBv
+ZApDLiBrdWJlY3RsIGxvZ3MKRC4ga3ViZWN0bCBleGVjCkFuc3dlcjogQi4ga3ViZWN0bCBkZXNj
+cmliZSBwb2Q=
