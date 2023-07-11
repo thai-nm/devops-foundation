@@ -1,2 +1,3 @@
-# DevOps Foundation: Kubernetes
-*This repository contains materials used in Kubernetes module of DevOps Foundation course.*
+# Module: Kubernetes
+
+*This directory contains lecture materials for the Kubernetes module.*
