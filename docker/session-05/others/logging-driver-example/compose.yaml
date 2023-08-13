@@ -9,7 +9,7 @@ services:
     image: "thainm/sample-webapp-reactjs:latest"
     restart: always
     ports:
-      - 127.0.0.1:8080:80
+      - 0.0.0.0:8080:80
     networks:
       - sample-webapp-network
     logging:
@@ -22,7 +22,7 @@ services:
     image: "thainm/sample-webapp-nodejs:latest"
     restart: always
     ports:
-      - 127.0.0.1:3000:3000
+      - 0.0.0.0:3000:3000
     networks:
       - sample-webapp-network
     logging:
