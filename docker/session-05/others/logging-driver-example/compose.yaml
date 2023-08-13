@@ -6,7 +6,7 @@ networks:
 services:
   frontend:
     container_name: reactjs-frontend
-    image: "thainm/sample-webapp-reactjs:${LATEST_TAG}"
+    image: "thainm/sample-webapp-reactjs:latest"
     restart: always
     ports:
       - 127.0.0.1:8080:80
@@ -19,7 +19,7 @@ services:
 
   backend:
     container_name: nodejs-backend
-    image: "thainm/sample-webapp-nodejs:${LATEST_TAG}"
+    image: "thainm/sample-webapp-nodejs:latest"
     restart: always
     ports:
       - 127.0.0.1:3000:3000
