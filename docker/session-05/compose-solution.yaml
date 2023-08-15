@@ -1,0 +1,25 @@
+version: "3.8"
+
+networks:
+  deployment-practice-network:
+
+services:
+  frontend:
+    container_name: sample-webapp-reactjs
+    image: thainm/reactjs-frontend:latest
+    restart: always
+    ports:
+      - 0.0.0.0:18080:80
+    networks:
+      - deployment-practice-network
+  backend:
+    container_name: sample-webapp-nodejs
+    image: thainm/nodejs-backend:latest
+    restart: always
+    environment:
+      - USER=practitioner-be
+      - ENV=dev
+    ports:
+      - 0.0.0.0:13000:3000
+    networks:
+      - deployment-practice-network
