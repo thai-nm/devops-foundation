@@ -1,0 +1,14 @@
+# /etc/systemd/system/prometheus.service
+
+[Unit]
+Description=Prometheus
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/prometheus \
+  --config.file /etc/prometheus/prometheus.yml \
+  --storage.tsdb.path /var/lib/prometheus/
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,13 @@
+# /etc/systemd/system/alertmanager.service
+
+[Unit]
+Description=Prometheus Alertmanager
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/alertmanager \
+  --config.file /etc/alertmanager/alertmanager.yml
+
+[Install]
+WantedBy=default.target
